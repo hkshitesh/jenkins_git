@@ -3,16 +3,16 @@ pipeline {
         label 'master'
     }
     stages {
-        stage('Stage1') {
+        stage('S1') {
             steps {
                 echo "Hello"
             }
         }
-        stage('Stage2') { 
+        stage('S2') { 
             steps {
                 echo 'mvn test' 
             }
-        stage('Stage3') { 
+        stage('S3') { 
             steps {
                 sh 'mvn clean' 
             }
