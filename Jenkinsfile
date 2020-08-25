@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'master'
-    }
+    agent any
     stages {
         stage('S1') {
             steps {
@@ -12,15 +10,12 @@ pipeline {
             steps {
                 echo 'mvn test' 
             }
+        }
         stage('S3') { 
             steps {
                 sh 'mvn clean' 
             }
-            post {
-                always {
-                    echo 'mvn test'
-                }
-            }
-        }
+        }           
+        
     }
 }
